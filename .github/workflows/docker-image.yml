@@ -21,7 +21,7 @@ env:
   DOCKER_AUTOBUILDS_DOCKERFILE_PATH: Dockerfile
 
   # DOCKER_REPOSITORY_NAME should be set to the name of the Docker Hub repository where the image will be pushed to.
-  DOCKER_REPOSITORY_NAME: scsautobuildsorg/autobuilds-githubactions
+  DOCKER_REPOSITORY_NAME: naramski/baikal
 
 jobs:
   autobuilds:
@@ -47,7 +47,7 @@ jobs:
           images: ${{ env.DOCKER_REPOSITORY_NAME }}
           tags: |
             # set latest tag for main branch
-            type=raw,value=latest,enable=${{ github.ref == format('refs/heads/{0}', 'main') }}
+            type=raw,value=latest,enable=${{ github.ref == format('refs/heads/{0}', 'master') }}
             type=semver,pattern={{version}}
 
       # Configure Docker Buildx.
