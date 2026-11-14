@@ -7,7 +7,7 @@ on:
   # Adjust to match your branching and tagging strategy.
   push:
     branches:
-      - main
+      - master
     tags:
       - "v*.*.*"
 
