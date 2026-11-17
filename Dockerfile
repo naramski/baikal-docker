@@ -3,6 +3,7 @@ FROM php:8.4-apache
 RUN apt update && apt upgrade -y
 
 RUN apt install -y wget unzip
+RUN docker-php-ext-install pdo pdo_mysql mysqli
 
 RUN wget -O /tmp/baikal.zip https://github.com/sabre-io/Baikal/releases/download/0.13.0/baikal-0.13.0.zip
 RUN unzip /tmp/baikal.zip -d /var/www/
